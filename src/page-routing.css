@@ -1,0 +1,32 @@
+.aigc-page[hidden],
+.models[hidden] {
+  display: none !important;
+}
+
+.app-shell.is-models > .contact {
+  display: none;
+}
+
+.nav-links a[href="#work"],
+.nav-links a[href="#models"] {
+  position: relative;
+  transition: color .2s ease;
+}
+
+.app-shell.is-aigc .nav-links a[href="#work"],
+.app-shell.is-models .nav-links a[href="#models"] {
+  color: #5e5ce6;
+  font-weight: 700;
+}
+
+.app-shell.is-aigc .nav-links a[href="#work"]::after,
+.app-shell.is-models .nav-links a[href="#models"]::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: #5e5ce6;
+  content: '';
+}

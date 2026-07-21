@@ -1,0 +1,39 @@
+.primary-button,
+.nav-action {
+  transition: background-color .28s ease, color .28s ease, box-shadow .28s ease, transform .28s ease;
+}
+
+.primary-button:hover,
+.primary-button:focus-visible {
+  background: #5e5ce6;
+  color: #fff;
+  box-shadow: 0 12px 26px rgba(94, 92, 230, .28);
+  transform: translateY(-2px);
+}
+
+.nav-action:hover,
+.nav-action:focus-visible {
+  background: #ff3b30;
+  color: #fff;
+  box-shadow: 0 9px 21px rgba(255, 59, 48, .24);
+  transform: translateY(-2px);
+}
+
+.primary-button span,
+.nav-action span {
+  display: inline-block;
+  transition: transform .28s ease;
+}
+
+.primary-button:hover span,
+.primary-button:focus-visible span,
+.nav-action:hover span,
+.nav-action:focus-visible span {
+  transform: translate(2px, -2px);
+}
+
+.primary-button:focus-visible,
+.nav-action:focus-visible {
+  outline: 2px solid #1d1d1f;
+  outline-offset: 4px;
+}

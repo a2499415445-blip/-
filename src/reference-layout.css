@@ -1,0 +1,2 @@
+@media(min-width:851px){.hero-content{transform:translateY(-68px)}.hero .overline{display:block;margin:0 0 96px;font-size:18px;letter-spacing:.16em}.hero h1{margin:0;font-size:clamp(86px,8.4vw,160px);line-height:.9}.hero-lead{max-width:620px;margin-top:46px;font-size:18px;line-height:1.8}.hero-actions{margin-top:116px}.hero .hero-video{right:max(5.5vw,80px)!important}}
+@media(max-width:850px){.hero-content{transform:none}.hero .overline{margin-bottom:26px}}

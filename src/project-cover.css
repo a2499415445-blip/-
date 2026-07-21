@@ -1,0 +1,345 @@
+.project.vertical .project-video:has(.project-cover) {
+  display: block;
+  background: #09090a;
+}
+
+.project-cover {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity .35s ease;
+}
+
+.project-preview {
+  position: relative;
+  cursor: pointer;
+}
+
+.project-hover-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity .35s ease;
+}
+
+.project-preview:hover .project-cover,
+.project-preview:focus-within .project-cover {
+  opacity: 0;
+}
+
+.project-preview:hover .project-hover-video,
+.project-preview:focus-within .project-hover-video {
+  opacity: 1;
+}
+
+/* Taihuang Huanyu: a narrow introduction column and one large 16:9 video stage. */
+.project.landscape-preview {
+  grid-template-columns: minmax(230px, 17%) minmax(0, 83%);
+}
+
+.project.landscape-preview .project-copy {
+  padding: clamp(36px, 3.2vw, 58px);
+}
+
+.project.landscape-preview .project-copy h3 {
+  font-size: clamp(36px, 3.1vw, 56px);
+  white-space: nowrap;
+}
+
+.landscape-preview {
+  display: grid;
+  place-items: center;
+  padding: clamp(28px, 3vw, 54px);
+  background: radial-gradient(circle at 72% 32%, #293a91 0, transparent 34%), #081546;
+}
+
+.landscape-preview .project-cover {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: left center;
+  transform: scale(1.035);
+  transform-origin: left center;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.landscape-preview .project-hover-video {
+  z-index: 2;
+  inset: 50% auto auto clamp(28px, 3vw, 54px);
+  width: calc(100% - clamp(56px, 6vw, 108px));
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  transform: translateY(-50%);
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.landscape-preview:hover .project-cover,
+.landscape-preview:focus-within .project-cover {
+  opacity: 0;
+}
+
+.landscape-preview:hover .project-hover-video,
+.landscape-preview:focus-within .project-hover-video {
+  opacity: 1;
+}
+
+@media (max-width: 850px) {
+  .project.landscape-preview {
+    display: block;
+  }
+
+  .landscape-preview {
+    min-height: 300px;
+  }
+
+  .landscape-preview .project-hover-video {
+    left: 20px;
+    width: calc(100% - 40px);
+  }
+}
+
+/* Hover choreography for the Taihuang Huanyu project card. */
+@media (min-width: 851px) {
+  .project.landscape-preview {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: #081546;
+  }
+
+  .project.landscape-preview .project-copy {
+    position: absolute;
+    z-index: 5;
+    inset: 0 auto 0 0;
+    width: clamp(245px, 20%, 365px);
+    padding: clamp(38px, 3.3vw, 62px);
+    background: #081546;
+    color: #edf3ff;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-105%);
+    transition: transform .52s cubic-bezier(.2, .8, .2, 1), opacity .28s ease;
+  }
+
+  .project.landscape-preview .project-copy > p:first-of-type,
+  .project.landscape-preview .project-no {
+    color: rgba(222, 232, 255, .62);
+  }
+
+  .project.landscape-preview .project-copy h3 {
+    color: #fff;
+  }
+
+  .project.landscape-preview .project-copy strong {
+    color: #8c9cff;
+  }
+
+  .project.landscape-preview .project-video.landscape-preview {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding: 0;
+    transition: left .52s cubic-bezier(.2, .8, .2, 1), width .52s cubic-bezier(.2, .8, .2, 1), padding .52s cubic-bezier(.2, .8, .2, 1);
+  }
+
+  .project.landscape-preview .project-cover {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    object-position: center;
+    transform: none;
+    transition: opacity .2s ease, object-position .52s ease;
+  }
+
+  .project.landscape-preview.portrait-preview .project-hover-video {
+    object-fit: contain;
+    background: #030407;
+  }
+
+  .project.landscape-preview .project-hover-video {
+    inset: 50% auto auto 50%;
+    width: calc(100% - clamp(60px, 6.4vw, 116px));
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    transition: opacity .2s ease;
+  }
+
+  .project.landscape-preview .project-video.landscape-preview {
+    cursor: pointer;
+  }
+
+  .preview-progress {
+    position: absolute;
+    z-index: 6;
+    right: clamp(30px, 3vw, 54px);
+    bottom: clamp(30px, 3vw, 54px);
+    left: clamp(30px, 3vw, 54px);
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    height: 46px;
+    padding: 0 15px;
+    border: 1px solid rgba(255, 255, 255, .19);
+    border-radius: 12px;
+    background: rgba(5, 13, 47, .52);
+    box-shadow: 0 10px 24px rgba(2, 6, 28, .2);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(calc(100% + 22px));
+    transition: opacity .26s ease, transform .38s cubic-bezier(.2, .8, .2, 1);
+  }
+
+  .preview-progress.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .preview-progress-icon {
+    width: 13px;
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  .preview-progress-track {
+    flex: 1;
+    height: 4px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .28);
+    cursor: pointer;
+  }
+
+  .preview-progress-track i {
+    display: block;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #c9d5ff, #7a8cff);
+    transition: width .12s linear;
+  }
+
+  .preview-volume {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    line-height: 1;
+    transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
+  }
+
+  .preview-volume:hover,
+  .preview-volume:focus-visible {
+    border-color: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .24);
+    outline: 0;
+    transform: translateY(-1px);
+  }
+
+  .preview-volume-wrap {
+    position: relative;
+    flex: 0 0 auto;
+  }
+
+  .preview-volume-control {
+    position: absolute;
+    right: -8px;
+    bottom: calc(100% + 11px);
+    display: flex;
+    width: 44px;
+    height: 156px;
+    padding: 12px 0 9px;
+    align-items: center;
+    flex-direction: column;
+    gap: 7px;
+    border: 1px solid rgba(255, 255, 255, .2);
+    border-radius: 13px;
+    background: rgba(5, 13, 47, .58);
+    box-shadow: 0 12px 28px rgba(2, 6, 28, .24);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity .22s ease, transform .3s cubic-bezier(.2, .8, .2, 1);
+  }
+
+  .preview-volume-control.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .preview-volume-control input {
+    width: 5px;
+    height: 112px;
+    margin: 0;
+    cursor: ns-resize;
+    accent-color: #9cafff;
+    direction: rtl;
+    writing-mode: vertical-lr;
+  }
+
+  .preview-volume-control span {
+    color: rgba(255, 255, 255, .85);
+    font-size: 9px;
+    line-height: 1;
+  }
+
+  .project.landscape-preview:hover .project-copy,
+  .project.landscape-preview:focus-within .project-copy {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .project.landscape-preview:hover .project-video.landscape-preview,
+  .project.landscape-preview:focus-within .project-video.landscape-preview {
+    left: clamp(245px, 20%, 365px);
+    width: calc(100% - clamp(245px, 20%, 365px));
+    padding: clamp(30px, 3vw, 54px);
+  }
+
+  .project.landscape-preview:hover .project-cover,
+  .project.landscape-preview:focus-within .project-cover {
+    object-fit: contain;
+    object-position: left center;
+    opacity: 0;
+    transition-delay: .46s;
+  }
+
+  .project.landscape-preview:hover .project-hover-video,
+  .project.landscape-preview:focus-within .project-hover-video {
+    opacity: 1;
+    transition-delay: .46s;
+  }
+}

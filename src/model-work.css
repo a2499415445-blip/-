@@ -1,0 +1,486 @@
+.models {
+  display: block !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  color: #17233d;
+  background:
+    radial-gradient(circle at 82% 10%, rgba(134, 153, 255, .34), transparent 26%),
+    radial-gradient(circle at 14% 70%, rgba(199, 217, 255, .52), transparent 28%),
+    #f5f6fa;
+}
+
+.model-page {
+  min-height: 100svh;
+  padding: clamp(132px, 14vh, 188px) 0 clamp(88px, 10vh, 142px);
+}
+
+.model-landing {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(330px, .78fr) minmax(540px, 1.22fr);
+  gap: clamp(30px, 4vw, 92px);
+  align-items: center;
+}
+
+.model-landing-copy {
+  position: relative;
+  z-index: 2;
+  padding-bottom: 18px;
+}
+
+.model-kicker {
+  margin: 45px 0 16px;
+  color: #5a6681;
+  font-size: 15px;
+  letter-spacing: .08em;
+}
+
+.model-landing h2 {
+  margin: 0;
+  font-size: clamp(72px, 7vw, 136px);
+  line-height: .82;
+  letter-spacing: -.1em;
+  color: #17233d;
+}
+
+.model-landing h2 span {
+  display: block;
+  margin-top: 21px;
+  color: #5e5ce6;
+  font-size: clamp(28px, 2.55vw, 48px);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -.04em;
+}
+
+.model-summary {
+  max-width: 520px;
+  margin: 42px 0 0;
+  color: #566177;
+  font-size: 18px;
+  line-height: 1.95;
+}
+
+.model-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 40px;
+}
+
+.model-facts span {
+  padding: 10px 13px;
+  border: 1px solid rgba(39, 55, 91, .13);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .58);
+  color: #344363;
+  font-size: 13px;
+}
+
+.model-hero-art {
+  position: relative;
+  display: grid;
+  min-height: min(77vh, 850px);
+  margin: 0;
+  place-items: center;
+}
+
+.model-hero-art::before {
+  display: none;
+}
+
+.model-hero-art img {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 850px);
+  max-height: min(82vh, 910px);
+  object-fit: contain;
+  filter: drop-shadow(0 34px 32px rgba(21, 32, 61, .25));
+}
+
+.model-weapon-art,
+.model-vehicle-art {
+  overflow: visible;
+  background: transparent;
+  box-shadow: none;
+}
+
+.model-weapon-art::before,
+.model-vehicle-art::before {
+  display: none;
+}
+
+.model-weapon-art img,
+.model-vehicle-art img {
+  width: 100%;
+  max-height: none;
+  mix-blend-mode: normal;
+  filter: none;
+}
+
+.model-views-page,
+.model-tech-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.model-page-head {
+  display: grid;
+  grid-template-columns: 1fr minmax(290px, 420px);
+  gap: 80px;
+  align-items: end;
+  margin-bottom: clamp(44px, 6vh, 78px);
+}
+
+.model-page-head h3 {
+  margin: 35px 0 0;
+  color: #18233c;
+  font-size: clamp(52px, 5.1vw, 92px);
+  line-height: .9;
+  letter-spacing: -.085em;
+}
+
+.model-page-head h3 em {
+  color: #5e5ce6;
+  font-style: normal;
+}
+
+.model-page-head > p {
+  max-width: 410px;
+  margin: 0 0 4px;
+  color: #5c667b;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.model-view-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.model-view-comparison figure,
+.model-tech-grid figure {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid rgba(33, 48, 80, .1);
+  border-radius: 26px;
+  background: rgba(255, 255, 255, .62);
+  box-shadow: 0 18px 48px rgba(46, 63, 105, .08);
+}
+
+.model-view-comparison figcaption {
+  position: absolute;
+  z-index: 2;
+  top: 22px;
+  left: 24px;
+  padding: 8px 11px;
+  border: 1px solid rgba(255, 255, 255, .5);
+  border-radius: 999px;
+  background: rgba(19, 32, 65, .66);
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: .06em;
+  backdrop-filter: blur(12px);
+}
+
+.model-view-comparison figure {
+  min-height: 350px;
+}
+
+.model-view-comparison img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  object-fit: contain;
+  background: #a6b2ca;
+}
+
+.model-tech-page {
+  min-height: 112svh;
+}
+
+.model-tech-grid {
+  display: grid;
+  grid-template-columns: minmax(330px, .8fr) minmax(500px, 1.2fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.tech-uv {
+  display: flex;
+  min-height: 640px;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.tech-uv figcaption,
+.tech-details figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  color: #263654;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tech-uv figcaption small {
+  color: #7b879d;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .05em;
+}
+
+.tech-uv img {
+  width: 100%;
+  height: calc(100% - 36px);
+  margin-top: 18px;
+  object-fit: contain;
+}
+
+.tech-uv-stack {
+  display: grid;
+  min-height: 0;
+  flex: 1;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.tech-uv .tech-uv-stack img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin-top: 0;
+  object-fit: contain;
+}
+
+.tech-uv-stack-five {
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.tech-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.tech-details figure {
+  display: flex;
+  min-height: 220px;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.tech-details figcaption {
+  margin-bottom: 13px;
+}
+
+.tech-details img {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  object-fit: contain;
+  object-position: center;
+}
+
+.tech-details .tech-folders {
+  grid-column: 1 / -1;
+  min-height: 170px;
+}
+
+.tech-details .tech-folders img {
+  object-position: left center;
+}
+
+@media (max-width: 1179px) {
+  .model-landing {
+    grid-template-columns: minmax(300px, .75fr) minmax(440px, 1.25fr);
+  }
+
+  .model-tech-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-uv {
+    min-height: 560px;
+  }
+}
+
+@media (max-width: 850px) {
+  .model-page {
+    min-height: auto;
+    padding: 110px 0 82px;
+  }
+
+  .model-landing {
+    display: flex;
+    min-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .model-landing h2 {
+    font-size: clamp(64px, 17vw, 90px);
+  }
+
+  .model-landing h2 span {
+    font-size: 29px;
+  }
+
+  .model-summary {
+    font-size: 16px;
+  }
+
+  .model-hero-art {
+    min-height: 0;
+    margin-top: 30px;
+  }
+
+  .model-page-head {
+    display: block;
+    margin-bottom: 40px;
+  }
+
+  .model-page-head h3 {
+    font-size: clamp(46px, 12vw, 70px);
+  }
+
+  .model-page-head > p {
+    margin-top: 28px;
+    font-size: 16px;
+  }
+
+  .model-view-comparison,
+  .model-tech-grid,
+  .tech-details {
+    grid-template-columns: 1fr;
+  }
+
+  .model-view-comparison figure,
+  .model-view-comparison img {
+    min-height: 250px;
+  }
+
+  .tech-uv {
+    min-height: 430px;
+    padding: 17px;
+  }
+
+  .tech-details figure,
+  .tech-details .tech-folders {
+    grid-column: auto;
+    min-height: 180px;
+  }
+
+  .tech-details figure {
+    padding: 16px;
+  }
+}
+
+@media (min-width: 1180px) {
+  .models > .model-landing:nth-of-type(4) .model-hero-art img {
+    width: 115%;
+    transform: translateX(-32%);
+  }
+
+  .models > .model-landing:nth-of-type(7) .model-hero-art img {
+    width: 126%;
+    transform: translateX(-20%);
+  }
+
+  .models > .model-landing:nth-of-type(10) .model-hero-art img {
+    width: 115%;
+    transform: translateX(-15%);
+  }
+
+  .model-views-page {
+    min-height: 0;
+    justify-content: flex-start;
+  }
+
+  .model-view-comparison {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .model-view-comparison figure,
+  .model-view-comparison img {
+    min-height: 0;
+    height: clamp(430px, 34vw, 600px);
+  }
+
+  .model-tech-page {
+    min-height: 100svh;
+  }
+
+  .model-tech-grid {
+    grid-template-columns:
+      clamp(390px, 28.3vw, 528px)
+      minmax(355px, 506px)
+      minmax(260px, 300px);
+    grid-template-rows: 237px 213px 208px 224px;
+    column-gap: clamp(28px, 3.15vw, 59px);
+    row-gap: 16px;
+    align-items: start;
+  }
+
+  .tech-uv {
+    grid-column: 1;
+    grid-row: 1 / span 4;
+    height: 926px;
+    min-height: 0;
+    align-self: start;
+  }
+
+  .tech-details {
+    display: contents;
+  }
+
+  .tech-details figure,
+  .tech-details .tech-folders {
+    min-height: 0;
+  }
+
+  .tech-details figure:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    height: 237px;
+    margin-top: 0;
+  }
+
+  .tech-details figure:nth-of-type(3) {
+    grid-column: 2;
+    grid-row: 2;
+    width: min(277px, 100%);
+    height: 213px;
+  }
+
+  .tech-details figure:nth-of-type(2) {
+    grid-column: 2;
+    grid-row: 3;
+    width: min(355px, 100%);
+    height: 208px;
+    align-self: start;
+  }
+
+  .tech-details figure:nth-of-type(4) {
+    grid-column: 3;
+    grid-row: 1 / span 3;
+    width: 100%;
+    height: 697px;
+  }
+
+  .tech-details .tech-folders {
+    grid-column: 2 / -1;
+    grid-row: 4;
+    height: 224px;
+    margin-top: 0;
+  }
+}
